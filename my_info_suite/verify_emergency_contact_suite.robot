@@ -2,18 +2,19 @@
 Documentation   This suite handles test case related to emergency contact
 Resource    ../Resource/Base/CommonFunctionality.resource
 
+Library   DataDriver   file=../test_data/Book1.xlsv      sheet_name=addemergencycontact
+
 Test Setup  Launch Browser and navigate to url
 Test Teardown   Close Browser
 
 Test Template   Verify Add Emergency Contact Test
 
 *** Test Cases ***
-TC1     Admin   admin123    John    Brother     787878
-TC2     Admin   admin123    Varsha   Sister      787005
+TC1
 
 *** Keywords ***
 Verify Add Emergency Contact Test
-    [Arguments]     ${username}     ${password}     ${name}     ${relationshi}      ${home_telephone}
+    [Arguments]     ${username}    ${password}      ${name}     ${relationshi}      ${home_telephone}
     Input Text    id=txtUsername    ${username}
     Input Password    id=txtPassword    ${password}
     Click Element    id=btnLogin
