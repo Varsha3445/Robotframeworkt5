@@ -1,14 +1,15 @@
 *** Settings ***
-Documentation      This suite will handles all the test cases related to valid
-...     credential test for orangehrm. Test case - TC_OH_2
-Resource       ../Resource/Base/CommonFunctionality.resource
+Documentation
+...  credential test.
+Resource    ../Resource/Base/CommonFunctionality.resource
 
-Test Teardown      Close Browser
+Test Teardown       Close Browser
 
 *** Test Cases ***
-Verify Valid Credential Test
-    Launch Browser
-    Input Text    id=txtUsername    Admin
-    Input Password    id=txtPassword    admin123
+verify Invalid Credential Test
+
+    Launch Browser and navigate to url
+    Input Text    id=txtUsername    Abcd
+    Input Password    id=txtPassword    abcd123
     Click Element    id=btnLogin
-    Page Should Contain    My Info
+    Element Text Should Be    xpath=//span[@id='spanMessage']    Invalid credentials
