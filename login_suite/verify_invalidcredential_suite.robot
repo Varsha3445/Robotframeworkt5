@@ -3,7 +3,7 @@ Documentation      This suite will handles all the test cases related to invalid
 ...     credential test for orangehrm. Test case - TC_OH_3
 Resource      ../Resource/Base/CommonFunctionality.resource
 
-Test Setup      Launch Browser
+Test Setup      Launch Browser and navigate to url
 Test Teardown      Close Browser
 
 Test Template       Verify Invalid Credential Template
